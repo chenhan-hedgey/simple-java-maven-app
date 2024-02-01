@@ -7,8 +7,9 @@ pipeline {
             steps {
                 sh 'cd /root/temp'
                 sh 'pwd'
-                // 执行 Maven 构建命令，跳过测试，执行清理和打包
-            }
+                // 在/root/temp创建一个文件，文件名为test-日期-小时-分钟-秒数
+                sh 'touch test-`date +%Y%m%d%H%M%S`.txt'
+               }
         }
     }
 }
